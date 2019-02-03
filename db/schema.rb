@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_101624) do
+ActiveRecord::Schema.define(version: 2019_02_03_113315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,9 @@ ActiveRecord::Schema.define(version: 2018_12_03_101624) do
     t.boolean "is_borrowed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "clarity"
+    t.string "cut"
+    t.string "certification_number"
     t.index ["owner_id"], name: "index_stones_on_owner_id"
   end
 
@@ -78,9 +81,10 @@ ActiveRecord::Schema.define(version: 2018_12_03_101624) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "photo"
-    t.string "firm"
+    t.string "first_name"
+    t.string "company_name"
+    t.string "last_name"
+    t.integer "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
